@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import type { VariantsOf } from "@klass/core";
+
+import propsplit from "propsplit";
+
+import { ButtonKlass } from "./Button.style.ts";
+
+type Props = HTMLAttributes<"button"> & VariantsOf<typeof ButtonKlass>;
+
+const { class: className, ...props } = Astro.props;
+
+const [buttonKlass, rest] = propsplit(props, ButtonKlass.k);
+---
+
+<button type="button" {...rest} class={ButtonKlass(buttonKlass, className)}>
+  <slot />
+</button>

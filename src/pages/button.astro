@@ -1,0 +1,18 @@
+---
+import RootLayout from "~/layouts/RootLayout.astro";
+
+import * as UI from "~/components/ui.ts";
+---
+
+<RootLayout>
+  <Fragment slot="head">
+    <title>button</title>
+    <meta name="description" content="button" />
+  </Fragment>
+
+  <Fragment slot="body">
+    <main class="flex items-center justify-center w-dvw h-dvh overflow-hidden">
+      <UI.Button>button</UI.Button>
+    </main>
+  </Fragment>
+</RootLayout>
